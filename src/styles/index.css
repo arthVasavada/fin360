@@ -1,3 +1,81 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Global Scrollbar Styles */
+html, body {
+    overflow: auto; /* Ensure scrolling is enabled */
+    scrollbar-width: thin; /* Firefox: Thin scrollbar */
+    scrollbar-color: #999 transparent; /* Firefox: Thumb and track colors */
+  }
+  
+  ::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+    height: 5px; /* Height of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #999; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+    border: 3px solid transparent; /* Adds padding */
+    background-clip: content-box; /* Ensures padding visibility */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #777; /* Darker thumb color on hover */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent; /* Transparent track */
+  }
+  
+  /* Hide scrollbar by default, visible only when scrolling */
+  body::-webkit-scrollbar {
+    display: none; /* Hide scrollbar when not scrolling */
+  }
+  
+  body:hover::-webkit-scrollbar {
+    display: block; /* Show scrollbar when interacting */
+  }
+  
+  /* Toggle Checkbox Style */
+.toggle-checkbox {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ccc;
+    border-radius: 10px;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .toggle-checkbox:checked {
+    background: #4caf50;
+  }
+  
+  .toggle-checkbox:checked::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    background: #fff;
+    border-radius: 50%;
+    transition: left 0.3s;
+  }
+  
+  .toggle-checkbox::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: #fff;
+    border-radius: 50%;
+    transition: left 0.3s;
+  }
+  
